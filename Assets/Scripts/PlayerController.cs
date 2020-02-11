@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public GameObject debugObj, player, bullet;
+    public GameObject debugObj, player, bullet, virtualCam;
     public float shotForce, bulletSpeed, currentDamage, shotCooldown;
     private bool isShooting, firstTouch, onCooldown, leftedge, rightedge;
     private Vector3 shotDirection;
     private Rigidbody rb;
+    private CameraShake cameraShake;
 
     void Start()
     {
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
         firstTouch = true;
 
         onCooldown = leftedge = rightedge = false;
+
+        cameraShake = virtualCam.GetComponent<CameraShake>();
     }
 
 
@@ -93,6 +96,7 @@ public class PlayerController : MonoBehaviour
     void spawnBullet()
     {
         var bul = Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
+        cameraShake.DoShake(1f, 0.1f, 0.2f);
         bul.GetComponent<Rigidbody>().AddForce((shotDirection * -1) * bulletSpeed);
         bul.GetComponent<BulletController>().damage = currentDamage;
         Destroy(bul, 2);
