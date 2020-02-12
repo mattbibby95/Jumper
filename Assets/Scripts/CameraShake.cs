@@ -11,17 +11,10 @@ public class CameraShake : MonoBehaviour
 
     private IEnumerator shaker;
 
-    // Start is called before the first frame update
     void Start()
     {
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
         noise = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private IEnumerator Shake(float amp, float freq, float shaketime)

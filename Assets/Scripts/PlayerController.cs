@@ -5,20 +5,23 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    private GameController gc;
     public GameObject debugObj, player, bullet, virtualCam;
     public float shotForce, bulletSpeed, currentDamage, shotCooldown;
-    private bool isShooting, firstTouch, onCooldown, leftedge, rightedge;
+    private bool isShooting, firstTouch, onCooldown, leftedge, rightedge, topedge;
     private Vector3 shotDirection;
     private Rigidbody rb;
     private CameraShake cameraShake;
 
     void Start()
     {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+
         rb = player.GetComponent<Rigidbody>();
 
         firstTouch = true;
 
-        onCooldown = leftedge = rightedge = false;
+        onCooldown = leftedge = rightedge = topedge = false;
 
         cameraShake = virtualCam.GetComponent<CameraShake>();
     }
@@ -64,16 +67,16 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (leftedge)
+        if (leftedge || rightedge)
         {
-            leftedge = false;
-            bounceBack(player.transform.right);
+            leftedge = rightedge = false;
+            bounceBack();
         }
 
-        if (rightedge)
+        if (topedge)
         {
-            rightedge = false;
-            bounceBack(player.transform.right * -1);
+            topedge = false;
+            stopTop();
         }
 
         if (isShooting)
@@ -103,10 +106,17 @@ public class PlayerController : MonoBehaviour
     }
 
     // Add force to push player back onto screen, call in fixedupdate
-    void bounceBack(Vector3 direction)
+    void bounceBack()
     {
         Vector3 newVel = rb.velocity;
         newVel.x *= -1;
+        rb.velocity = newVel;
+    }
+
+    void stopTop()
+    {
+        Vector3 newVel = rb.velocity;
+        newVel.y *= 0.9f;
         rb.velocity = newVel;
     }
 
@@ -128,12 +138,21 @@ public class PlayerController : MonoBehaviour
         }
         if (1.0 < pos.y)
         {
-            Debug.Log("Above Camera");
+            topedge = true;
         }
     }
 
     void resetCooldown()
     {
         onCooldown = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("COLLIDED");
+        if (other.tag == "Obstacle")
+        {
+            gc.reloadScene();
+        }
     }
 }
