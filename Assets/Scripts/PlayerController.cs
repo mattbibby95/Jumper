@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
 
         if (leftedge || rightedge)
         {
-            leftedge = rightedge = false;
             bounceBack();
         }
 
@@ -109,7 +108,18 @@ public class PlayerController : MonoBehaviour
     void bounceBack()
     {
         Vector3 newVel = rb.velocity;
-        newVel.x *= -1;
+        if (rightedge)
+        {
+            newVel.x = -3;
+            Debug.Log("RIGHT");
+        }
+        if (leftedge)
+        {
+            newVel.x = 3;
+            Debug.Log("LEFT");
+        }
+        leftedge = rightedge = false;
+        // newVel.x *= -1;
         rb.velocity = newVel;
     }
 
