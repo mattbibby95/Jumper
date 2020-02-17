@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraBackground : MonoBehaviour
 {
 
-    private Camera cam;
+    public Camera cam;
     public Color[] colors;
     private Color bgcol;
 
@@ -16,7 +16,6 @@ public class CameraBackground : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = GetComponent<Camera>();
         bgcol = cam.backgroundColor;
     }
 
