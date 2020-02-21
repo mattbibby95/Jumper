@@ -9,6 +9,8 @@ public class Score : MonoBehaviour
 
     private Transform playerTransform;
 
+    public ColourHandler colourHandler;
+
     public float distanceScore;
     public float levelIncrement = 100f;
 
@@ -32,6 +34,7 @@ public class Score : MonoBehaviour
         if (distanceScore >= nextLevel)
         {
             Debug.Log("REACHED DISTANCE: " + nextLevel);
+            colourHandler.nextColour();
             nextLevel += levelIncrement;
         }
     }

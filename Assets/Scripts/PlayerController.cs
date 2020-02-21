@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     private GameController gc;
     public GameObject debugObj, player, bullet, virtualCam;
+    private CameraMover cameraMover;
     public float shotForce, bulletSpeed, currentDamage, shotCooldown;
     private bool isShooting, firstTouch, onCooldown, leftedge, rightedge, topedge;
     private Vector3 shotDirection;
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
         rb = player.GetComponent<Rigidbody>();
+
+        cameraMover = virtualCam.GetComponent<CameraMover>();
 
         firstTouch = true;
 
@@ -43,6 +46,7 @@ public class PlayerController : MonoBehaviour
             if (firstTouch)
             {
                 firstTouch = false;
+                cameraMover.enabled = true;
                 rb.useGravity = true;
             }
 
@@ -126,7 +130,7 @@ public class PlayerController : MonoBehaviour
     void stopTop()
     {
         Vector3 newVel = rb.velocity;
-        newVel.y *= 0.9f;
+        newVel.y = -3;
         rb.velocity = newVel;
     }
 
@@ -144,7 +148,7 @@ public class PlayerController : MonoBehaviour
         }
         if (pos.y < 0.0)
         {
-            Debug.Log("Below Camera");
+            gc.reloadScene();
         }
         if (1.0 < pos.y)
         {
