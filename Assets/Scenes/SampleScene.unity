@@ -1320,7 +1320,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1283246722}
   - component: {fileID: 1283246725}
-  - component: {fileID: 1283246723}
   - component: {fileID: 1283246724}
   m_Layer: 0
   m_Name: cm
@@ -1343,28 +1342,6 @@ Transform:
   m_Father: {fileID: 1990460329}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1283246723
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283246721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0, z: -30}
-  m_XDamping: 20
-  m_YDamping: 20
-  m_ZDamping: 0
-  m_AngularDampingMode: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
-  m_AngularDamping: 0
 --- !u!114 &1283246724
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1929,7 +1906,6 @@ GameObject:
   - component: {fileID: 1650098904}
   - component: {fileID: 1650098903}
   - component: {fileID: 1650098905}
-  - component: {fileID: 1650098906}
   - component: {fileID: 1650098907}
   - component: {fileID: 1650098908}
   m_Layer: 0
@@ -1978,23 +1954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb931781315bf046b7bd33feb3a496e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1650098906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1650098902}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c1bd9c456e8de248b4b4af4fb2de78d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 963194227}
-  colors: []
-  color1: {r: 1, g: 0, b: 0, a: 1}
-  color2: {r: 0, g: 0, b: 1, a: 1}
-  duration: 3
 --- !u!114 &1650098907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2045,8 +2004,33 @@ MonoBehaviour:
   - {r: 0.22352941, g: 0.9019608, b: 0.5058824, a: 0}
   - {r: 0.57254905, g: 0, b: 0.05882353, a: 0}
   - {r: 0.8, g: 0.5568628, b: 0.5647059, a: 0}
+  mainEnemy:
+  - {r: 0.6666667, g: 0.7176471, b: 0.96470594, a: 0}
+  - {r: 0.36862746, g: 0.23137257, b: 0.6784314, a: 0}
+  - {r: 0.050980397, g: 0.18431373, b: 1, a: 0}
+  - {r: 0.28235295, g: 0.9686275, b: 0.31764707, a: 0}
+  - {r: 0.85098046, g: 0.5647059, b: 0.40000004, a: 0}
+  - {r: 0.18039216, g: 0.20000002, b: 0.18823531, a: 0}
+  - {r: 0.14117648, g: 1, b: 0.5764706, a: 0}
+  - {r: 0.32941177, g: 0.9490197, b: 0.18823531, a: 0}
+  - {r: 0.5882353, g: 0.03137255, b: 0.61960787, a: 0}
+  - {r: 0.8431373, g: 0.5529412, b: 0.85098046, a: 0}
+  altEnemy:
+  - {r: 0.6666667, g: 0.96470594, b: 0.89019614, a: 0}
+  - {r: 0.6784314, g: 0.23137257, b: 0.3529412, a: 0}
+  - {r: 0.050980397, g: 1, b: 0.80392164, a: 0}
+  - {r: 0.28235295, g: 0.85098046, b: 0.9686275, a: 0}
+  - {r: 0.85098046, g: 0.77647066, b: 0.40000004, a: 0}
+  - {r: 0.18039216, g: 0.18823531, b: 0.20000002, a: 0}
+  - {r: 0.14117648, g: 0.4901961, b: 1, a: 0}
+  - {r: 0.18823531, g: 0.9490197, b: 0.93725497, a: 0}
+  - {r: 0.61960787, g: 0.18431373, b: 0.03137255, a: 0}
+  - {r: 0.85098046, g: 0.63529414, b: 0.5529412, a: 0}
   backgroundCam: {fileID: 963194227}
   playerMaterial: {fileID: 2100000, guid: 1aa81ff807a89234e9e2b84abba84899, type: 2}
+  bulletMaterial: {fileID: 2100000, guid: 2cd29faccd6d057438b6ad6dd4cdc274, type: 2}
+  mainEnemyMaterial: {fileID: 2100000, guid: aa5177fda12442c41bba09eec1a91869, type: 2}
+  altEnemyMaterial: {fileID: 2100000, guid: 25f843f45bb72aa42b3293a084106822, type: 2}
   changeTime: 2
 --- !u!1 &1756265773
 GameObject:
@@ -2125,7 +2109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1761787609
 Transform:
   m_ObjectHideFlags: 0
@@ -2330,7 +2314,7 @@ GameObject:
   - component: {fileID: 1990460329}
   - component: {fileID: 1990460328}
   - component: {fileID: 1990460330}
-  - component: {fileID: 1990460331}
+  - component: {fileID: 1990460332}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -2401,18 +2385,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_XPosition: 0
---- !u!114 &1990460331
+--- !u!114 &1990460332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990460327}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bef90b9f246ed4e43ad5382e70d1ece2, type: 3}
+  m_Script: {fileID: 11500000, guid: f24e81e7d5b6f7e44803e0ab997dd4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraSpeed: 2
 --- !u!4 &2035780134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4237346252580651554, guid: 42ee0e32508e24e49a67e23ee22e7356,

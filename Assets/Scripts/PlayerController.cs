@@ -102,7 +102,6 @@ public class PlayerController : MonoBehaviour
     void spawnBullet()
     {
         var bul = Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
-        cameraShake.DoShake(1f, 0.1f, 0.2f);
         bul.GetComponent<Rigidbody>().AddForce((shotDirection * -1) * bulletSpeed);
         bul.GetComponent<BulletController>().damage = currentDamage;
         Destroy(bul, 2);
