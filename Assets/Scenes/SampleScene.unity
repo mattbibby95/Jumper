@@ -132,9 +132,9 @@ GameObject:
   - component: {fileID: 280426213}
   - component: {fileID: 280426212}
   - component: {fileID: 280426211}
+  - component: {fileID: 280426210}
   - component: {fileID: 280426209}
   - component: {fileID: 280426214}
-  - component: {fileID: 280426210}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -802,6 +802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 906712468677586993, guid: 42ee0e32508e24e49a67e23ee22e7356, type: 3}
+  - {fileID: 7313666533156711482, guid: b1d057c6ac1b3b048b574407cb7b3406, type: 3}
+  minimumDelay: 2
+  maximumDelay: 5
 --- !u!114 &1650098907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,6 +880,7 @@ MonoBehaviour:
   backgroundCam: {fileID: 963194227}
   playerMaterial: {fileID: 2100000, guid: 1aa81ff807a89234e9e2b84abba84899, type: 2}
   bulletMaterial: {fileID: 2100000, guid: 2cd29faccd6d057438b6ad6dd4cdc274, type: 2}
+  enemyBulletMaterial: {fileID: 0}
   mainEnemyMaterial: {fileID: 2100000, guid: aa5177fda12442c41bba09eec1a91869, type: 2}
   altEnemyMaterial: {fileID: 2100000, guid: 25f843f45bb72aa42b3293a084106822, type: 2}
   changeTime: 2
