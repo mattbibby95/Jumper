@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4237346252580651554}
   - component: {fileID: 9202163805620971837}
+  - component: {fileID: -2884222929747396582}
   m_Layer: 0
   m_Name: spikeCylinder
   m_TagString: Untagged
@@ -47,6 +48,18 @@ MonoBehaviour:
   xrot: 0
   yrot: 20
   zrot: 0
+--- !u!114 &-2884222929747396582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906712468677586993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3db3577392fa194b961243bd3c200c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6672364872829310380
 GameObject:
   m_ObjectHideFlags: 0

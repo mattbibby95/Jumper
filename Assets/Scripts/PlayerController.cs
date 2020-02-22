@@ -7,9 +7,12 @@ public class PlayerController : MonoBehaviour
 
     private GameController gc;
     public GameObject debugObj, player, bullet, virtualCam;
+    public EnemySpawner enemySpawner;
     private CameraMover cameraMover;
     public float shotForce, bulletSpeed, currentDamage, shotCooldown;
-    private bool isShooting, firstTouch, onCooldown, leftedge, rightedge, topedge;
+    [HideInInspector]
+    public bool firstTouch;
+    private bool isShooting, onCooldown, leftedge, rightedge, topedge;
     private Vector3 shotDirection;
     private Rigidbody rb;
     private CameraShake cameraShake;
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
             {
                 firstTouch = false;
                 cameraMover.enabled = true;
+                enemySpawner.enabled = true;
                 rb.useGravity = true;
             }
 

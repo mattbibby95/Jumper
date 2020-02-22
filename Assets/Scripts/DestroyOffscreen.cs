@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMover : MonoBehaviour
+public class DestroyOffscreen : MonoBehaviour
 {
-
-    public float cameraSpeed = 1.5f;
-    public float maxSpeed = 2.0f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +13,10 @@ public class CameraMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cameraSpeed < maxSpeed)
+        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+        if (pos.y < 0.0)
         {
-            cameraSpeed *= 1.0001f;
+            Destroy(this, 0.5f);
         }
-        transform.Translate(Vector3.up * Time.deltaTime * cameraSpeed);
     }
 }
