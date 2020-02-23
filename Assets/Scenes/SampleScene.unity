@@ -803,6 +803,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 906712468677586993, guid: 42ee0e32508e24e49a67e23ee22e7356, type: 3}
   - {fileID: 7313666533156711482, guid: b1d057c6ac1b3b048b574407cb7b3406, type: 3}
+  - {fileID: 7395263061777123752, guid: 982927a913ee80042b44a11b56dc4f3d, type: 3}
   minimumDelay: 2
   maximumDelay: 5
 --- !u!114 &1650098907
@@ -880,7 +881,6 @@ MonoBehaviour:
   backgroundCam: {fileID: 963194227}
   playerMaterial: {fileID: 2100000, guid: 1aa81ff807a89234e9e2b84abba84899, type: 2}
   bulletMaterial: {fileID: 2100000, guid: 2cd29faccd6d057438b6ad6dd4cdc274, type: 2}
-  enemyBulletMaterial: {fileID: 0}
   mainEnemyMaterial: {fileID: 2100000, guid: aa5177fda12442c41bba09eec1a91869, type: 2}
   altEnemyMaterial: {fileID: 2100000, guid: 25f843f45bb72aa42b3293a084106822, type: 2}
   changeTime: 2
