@@ -34,7 +34,7 @@ public class EnemyShooter : MonoBehaviour
             shotDirection = Quaternion.AngleAxis(Random.Range(-accuracy, accuracy), Vector3.forward) * shotDirection;
             var bul = Instantiate(enemyBullet, gameObject.transform.position, Quaternion.identity);
             bul.GetComponent<Rigidbody>().AddForce(shotDirection * bulletSpeed * -1);
-            Destroy(bul, 15f);
+            // Destroy(bul, 15f);
             yield return new WaitForSeconds(Random.Range(minimumDelay, maximumDelay));
         }
     }

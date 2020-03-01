@@ -124,3 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
+  ttl: 3
+  explEffect: {fileID: 4599023769689803629, guid: 59600640fa7486e45a1acb803f74d7d5,
+    type: 3}

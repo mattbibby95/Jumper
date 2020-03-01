@@ -15,6 +15,7 @@ public class Score : MonoBehaviour
     public float levelIncrement = 100f;
 
     private float nextLevel;
+    public TMPro.TMP_Text textMesh;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,14 @@ public class Score : MonoBehaviour
             Debug.Log("REACHED DISTANCE: " + nextLevel);
             colourHandler.nextColour();
             nextLevel += levelIncrement;
+        }
+        if (distanceScore < 2.5f)
+        {
+            textMesh.text = "0";
+        }
+        else
+        {
+            textMesh.text = distanceScore.ToString("F0");
         }
     }
 }

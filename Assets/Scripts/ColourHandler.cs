@@ -9,7 +9,7 @@ public class ColourHandler : MonoBehaviour
     public Camera backgroundCam;
     public Material playerMaterial, bulletMaterial, mainEnemyMaterial, altEnemyMaterial;
     public float changeTime = 2.0f;
-    private int currentIndex;
+    public int currentIndex;
     private IEnumerator bgChange, playerChange, bulletChange, enemyChange, altEnemyChange;
 
     // Start is called before the first frame update

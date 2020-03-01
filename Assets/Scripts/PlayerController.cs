@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 shotDirection;
     private Rigidbody rb;
     private CameraShake cameraShake;
+    private ParticleSystem ps;
 
     void Start()
     {
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
         onCooldown = leftedge = rightedge = topedge = false;
 
         cameraShake = virtualCam.GetComponent<CameraShake>();
+
+        ps = GetComponent<ParticleSystem>();
     }
 
 
@@ -67,6 +70,9 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(debugObj.transform.position, shotDirection, Color.blue);
 
             isShooting = true;
+
+
+            //GetComponent<ParticleSystem>().Play();
 
         }
     }
